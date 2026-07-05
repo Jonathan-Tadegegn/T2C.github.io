@@ -1,252 +1,72 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<!-- HTML5 UP Spectral - Restored Original Structure -->
+<html>
 	<head>
 		<title>Trash 2 Change (T2C) - Home</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		
-		<!-- Import Premium Fonts (Fancy Playfair Display for headings + Clean Inter for body) -->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="preconnect" href="https://googleapis.com">
 		<link rel="preconnect" href="https://gstatic.com" crossorigin>
-		<link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-
+		<link href="https://googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
 		<style>
-			/* ==========================================
-			   TOTAL STYLE RESET & ECO BRAND PALETTE
-			   ========================================== */
-			* { box-sizing: border-box; margin: 0; padding: 0; }
-			
-			body {
-				font-family: 'Inter', sans-serif !important;
-				background-color: #f8f9fa; /* Cream BG */
-				color: #1b4332; /* Deep text */
-				line-height: 1.65;
-				display: block;
-				min-height: 100vh;
-				overflow-x: hidden;
-			}
-
-			/* ==========================================
-			   PREMIUM TYPOGRAPHY (BIG & FANCY)
-			   ========================================== */
-			h1, h2, h3, h4 {
-				font-family: 'Playfair Display', Georgia, serif !important;
-				font-weight: 700;
-				color: #2d6a4f; /* Forest Green */
-				letter-spacing: -0.02em;
-			}
-
-			/* ==========================================
-			   HEADER & NAVIGATION BAR
-			   ========================================== */
-			#header {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				padding: 0 3rem;
-				height: 4.5rem;
-				background-color: #1b4332;
-				position: fixed;
-				top: 0;
-				width: 100%;
-				z-index: 1000;
-				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-			}
-			#header h1 a {
-				color: #ffffff;
-				text-decoration: none;
-				font-weight: 700;
-				font-size: 1.6rem;
-				letter-spacing: -0.03em;
-			}
-			#nav-links {
-				display: flex;
-				list-style: none;
-				gap: 2rem;
-				align-items: center;
-			}
-			#nav-links a {
-				color: #ffffff;
-				text-decoration: none;
-				font-weight: 500;
-				font-size: 0.95rem;
-				transition: all 0.2s ease;
-			}
-			#nav-links a:hover {
-				color: #b7e4c7;
-			}
-			#nav-links .coming-soon {
-				opacity: 0.45;
-				cursor: default;
-				color: #ffffff;
-				font-weight: 400;
-			}
-			#nav-links .donate-btn {
-				background-color: #2d6a4f;
-				padding: 0.6rem 1.2rem;
-				border-radius: 5px;
-				font-weight: 600;
-				box-shadow: inset 0 0 0 2px transparent;
-			}
-			#nav-links .donate-btn:hover {
-				background-color: transparent;
-				box-shadow: inset 0 0 0 2px #b7e4c7;
-				color: #b7e4c7;
-			}
-
-			/* ==========================================
-			   FAST ANIMATING HERO BANNER
-			   ========================================== */
-			#banner {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				text-align: center;
-				min-height: 85vh;
-				background: linear-gradient(rgba(27, 67, 50, 0.82), rgba(27, 67, 50, 0.82)), 
-							url('https://unsplash.com');
-				background-size: cover;
-				background-position: center;
-				color: #ffffff;
-				padding: 6rem 2rem 4rem 2rem;
-				opacity: 0;
-				animation: fastFadeIn 0.35s ease-in-out forwards;
-			}
-			#banner .inner {
-				max-width: 45rem;
-				opacity: 0;
-				transform: translateY(12px);
-				animation: fastTextIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
-			}
-			#banner h2 {
-				font-size: 4.8rem !important; /* Huge Fancy Font */
-				color: #ffffff !important;
-				margin-bottom: 1.2rem;
-				line-height: 1.05;
-			}
-			#banner p {
-				font-size: 1.35rem;
-				color: #d8f3dc;
-				font-weight: 300;
-				max-width: 32rem;
-				margin: 0 auto;
-				line-height: 1.5;
-			}
-
-			/* ==========================================
-			   MISSION SECTION (RESTORED DIRECTLY BELOW)
-			   ========================================== */
-			#mission-section {
-				background-color: #ffffff;
-				padding: 7rem 2rem;
-				text-align: center;
-				border-bottom: 1px solid #e9ecef;
-			}
-			#mission-section .inner {
-				max-width: 42rem;
-				margin: 0 auto;
-			}
-			#mission-section h2 {
-				font-size: 3rem !important; /* Big Fancy Header */
-				margin-bottom: 1.5rem;
-				position: relative;
-				padding-bottom: 1rem;
-			}
-			#mission-section h2::after {
-				content: '';
-				position: absolute;
-				bottom: 0;
-				left: 50%;
-				transform: translateX(-50%);
-				width: 60px;
-				height: 3px;
-				background-color: #40916c;
-				border-radius: 2px;
-			}
-			#mission-section p {
-				font-size: 1.2rem;
-				color: #40514e;
-				line-height: 1.8;
-				font-weight: 400;
-			}
-
-			/* ==========================================
-			   FOOTER AREA
-			   ========================================== */
-			#footer {
-				background-color: #1b4332;
-				padding: 4rem 2rem;
-				text-align: center;
-			}
-			#footer p {
-				color: #b7e4c7;
-				font-size: 0.95rem;
-				font-weight: 400;
-			}
-
-			/* ==========================================
-			   ANIMATION KEYS
-			   ========================================== */
-			@keyframes fastFadeIn {
-				from { opacity: 0; }
-				to { opacity: 1; }
-			}
-			@keyframes fastTextIn {
-				from { opacity: 0; transform: translateY(12px); }
-				to { opacity: 1; transform: translateY(0); }
-			}
-
-			/* ==========================================
-			   MOBILE RESPONSIVENESS OVERRIDES
-			   ========================================== */
-			@media (max-width: 768px) {
-				#header { padding: 0 1.5rem; }
-				#nav-links { gap: 1rem; }
-				#nav-links a { font-size: 0.8rem; }
-				#banner h2 { font-size: 2.8rem !important; }
-				#banner p { font-size: 1.05rem; }
-				#mission-section h2 { font-size: 2.2rem !important; }
-				#mission-section p { font-size: 1.05rem; }
-			}
+			/* Direct styling protection: patches the layout engine instantly */
+			body, input, select, textarea, p, .button { font-family: "Source Sans Pro", sans-serif !important; }
+			h1, h2, h3, h4, #banner h2 { font-family: 'Playfair Display', Georgia, serif !important; text-transform: none !important; }
+			#banner h2 { font-size: 4.5em !important; }
+			#banner { animation: fadeIn 0.4s ease-in-out forwards !important; }
 		</style>
 	</head>
-	<body>
-
-		<!-- Header Menu Infrastructure -->
-		<header id="header">
-			<h1><a href="index.html">t2c</a></h1>
-			<nav>
-				<ul id="nav-links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About Us</a></li>
-					<li><a href="officers.html">Meet the Officers</a></li>
-					<li><a class="coming-soon">Branches (Coming Soon)</a></li>
-					<li><a href="apply.html">Apply Now</a></li>
-					<li><a href="https://paypal.com" class="donate-btn" target="_blank">Donate Now</a></li>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+			<header id="header" class="alt">
+				<h1><a href="index.html">t2c</a></h1>
+				<nav id="nav">
+					<ul>
+						<li class="special">
+							<a href="#menu" class="menuToggle"><span>Menu</span></a>
+							<div id="menu">
+								<ul>
+									<li><a href="index.html">Home</a></li>
+									<li><a href="about.html">About Us</a></li>
+									<li><a href="officers.html">Meet the Officers</a></li>
+									<li><a href="javascript:void(0);" style="cursor: default; opacity: 0.5; pointer-events: none;">Branches (Coming Soon)</a></li>
+									<li><a href="apply.html">Apply Now</a></li>
+									<li><a href="https://paypal.com" class="button primary fit" target="_blank">Donate Now</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<section id="banner">
+				<div class="inner">
+					<h2>Trash 2 Change</h2>
+					<p>Transforming waste into community value and sustainability.</p>
+				</div>
+				<a href="#one" class="more scrolly">Learn More</a>
+			</section>
+			<section id="one" class="wrapper style1 special">
+				<div class="inner">
+					<header class="major">
+						<h2>Our Mission</h2>
+						<p>Type your organization's core mission statement here.<br />Keep it to 2-3 powerful sentences explaining what Trash 2 Change stands for.</p>
+					</header>
+				</div>
+			</section>
+			<footer id="footer">
+				<ul class="copyright">
+					<li>&copy; Trash 2 Change Organization. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
-			</nav>
-		</header>
-
-		<!-- Main Page Presentation Banner -->
-		<section id="banner">
-			<div class="inner">
-				<h2>Trash 2 Change</h2>
-				<p>Transforming waste into community value and sustainability.</p>
-			</div>
-		</section>
-
-		<!-- Restored Mission Panel (Sits perfectly under the header panel) -->
-		<section id="mission-section">
-			<div class="inner">
-				<h2>Our Mission</h2>
-				<p>Type your organization's core mission statement here. Keep it to 2-3 powerful, impactful sentences explaining what Trash 2 Change stands for and the environment you are striving to build.</p>
-			</div>
-		</section>
-
-		<!-- Footer Operations -->
-		<footer id="footer">
-			<p>&copy; Trash 2 Change Organization. All rights reserved.</p>
-		</footer>
-
+			</footer>
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
