@@ -7,86 +7,71 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<!-- Tally Core Engine Loader Widget -->
+		<script async src="https://tally.so"></script>
+
 		<style>
 			/* PREMIUM MATCHING WRAPPER SYSTEM */
 			#main {
 				max-width: 50rem !important;
 				width: 90% !important;
-				padding: 3rem 2rem !important;
+				padding: 4rem 2rem !important;
 				margin: 4rem auto !important;
 				background: rgba(255, 255, 255, 0.04) !important;
 				border-radius: 8px !important;
 				border: 1px solid rgba(255, 255, 255, 0.1) !important;
 				box-shadow: 0 20px 50px rgba(0,0,0,0.3) !important;
-				overflow: hidden; /* Keeps off-screen forms completely hidden */
 			}
 
-			/* NAV PANELS MATCHING MENU SYSTEM */
-			.toggle-container {
+			/* ACTION LAYOUT WRAPPER */
+			.action-container {
 				display: flex;
-				justify-content: center;
-				gap: 1rem;
-				margin: 2rem 0;
+				flex-direction: column;
+				align-items: center;
+				gap: 1.2rem;
+				margin-top: 2.5rem;
+				width: 100%;
 			}
-			.toggle-btn {
+
+			/* PREMIUM HOVER BUTTON LAYOUT */
+			.portal-btn {
+				display: block;
+				width: 100%;
+				max-width: 24rem;
 				background: transparent;
 				color: #ffffff !important;
-				border: 1px solid rgba(255, 255, 255, 0.2) !important;
-				padding: 0.65rem 1.5rem;
-				font-size: 0.85rem;
+				border: 1px solid rgba(255, 255, 255, 0.25) !important;
+				padding: 1rem 1.5rem;
+				font-size: 0.9rem;
 				font-weight: 600;
-				letter-spacing: 0.1em;
+				letter-spacing: 0.15em;
 				text-transform: uppercase;
+				text-decoration: none;
 				border-radius: 4px;
 				cursor: pointer;
-				transition: all 0.2s ease;
+				text-align: center;
+				transition: all 0.25s ease-in-out;
 			}
-			.toggle-btn:hover {
-				background: rgba(255, 255, 255, 0.05);
-				border-color: #ffffff !important;
-			}
-			.toggle-btn.active {
+			
+			.portal-btn:hover {
 				background: #ffffff !important;
 				color: #1c1d22 !important;
 				border-color: #ffffff !important;
+				box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+				transform: translateY(-2px);
 			}
 
-			/* THE BULLETPROOF FIX: FORM CONTAINER */
-			.form-wrapper {
-				width: 100%;
-				position: relative;
-				margin-top: 1.5rem;
-			}
-			
-			/* Form wraps are safely pushed off-screen instead of display:none */
-			.form-container {
-				position: absolute;
-				top: 0;
-				left: -200vw; /* Hidden far away on the left */
-				width: 100%;
-				opacity: 0;
-				pointer-events: none;
-				transition: opacity 0.2s ease;
-			}
-			
-			/* Slides into place smoothly when targeted */
-			.form-container.active {
-				position: relative;
-				left: 0;
-				opacity: 1;
-				pointer-events: auto;
-			}
-
-			.form-frame {
-				width: 100%;
-				height: 800px; /* Tall height baseline so scripts don't truncate text */
-				border: none;
+			.secure-badge {
+				font-size: 0.75rem;
+				color: rgba(255, 255, 255, 0.4);
+				letter-spacing: 0.05em;
+				margin-top: 1rem;
 			}
 		</style>
 	</head>
 	<body class="is-preload">
 
-		<!-- Main Page Canvas Wrapper -->
 		<div id="wrapper">
 
 			<!-- Global Header Navigation Menu -->
@@ -106,32 +91,29 @@
 			<section id="main">
 				<header>
 					<h2>Join Our Mission</h2>
-					<p>Select an option below to fill out your application directly on our secure portal.</p>
+					<p>Select an application option below to open the form portal.</p>
 				</header>
 
-				<!-- Navigation Selection Tabs -->
-				<div class="toggle-container">
-					<button class="toggle-btn active" id="btn-officer" onclick="switchForm('officer')">Apply as an Officer</button>
-					<button class="toggle-btn" id="btn-branch" onclick="switchForm('branch')">Start a New Branch</button>
-				</div>
+				<!-- Selection Buttons linking to Tally's Popup Engine via Data-Attributes -->
+				<div class="action-container">
+					
+					<!-- Button 1: Officer Registration Popup -->
+					<button class="portal-btn" data-tally-open="NpQA00" data-tally-layout="modal" data-tally-width="600" data-tally-hide-title="1" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+						Apply as an Officer
+					</button>
+					
+					<!-- Button 2: Branch Registration Popup -->
+					<button class="portal-btn" data-tally-open="eqlBLx" data-tally-layout="modal" data-tally-width="600" data-tally-hide-title="1" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+						Start a New Branch
+					</button>
 
-				<!-- Embedded Tally System Canvas Box -->
-				<div class="form-wrapper">
-					
-					<!-- Form Container 1: Officer Portal (Active by default) -->
-					<div id="officerFormContainer" class="form-container active">
-						<iframe id="officerForm" class="form-frame" src="https://tally.so"></iframe>
-					</div>
-					
-					<!-- Form Container 2: Branch Creation Portal -->
-					<div id="branchFormContainer" class="form-container">
-						<iframe id="branchForm" class="form-frame" src="https://tally.so"></iframe>
+					<div class="secure-badge">
+						🛡️ Powered by Tally Secure Form Processing
 					</div>
 					
 				</div>
 			</section>
 
-			<!-- Template Layout Footer -->
 			<footer id="footer">
 				<ul class="copyright">
 					<li>&copy; Trash 2 Change. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
@@ -142,29 +124,6 @@
 
 		<!-- Theme Initializer System Scripts -->
 		<script src="assets/js/main.js"></script>
-
-		<!-- Smart Off-Screen Layer Switcher Engine -->
-		<script>
-			function switchForm(type) {
-				// Remove active highlight tags
-				document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
-				document.querySelectorAll('.form-container').forEach(container => container.classList.remove('active'));
-				
-				if(type === 'officer') {
-					document.getElementById('officerFormContainer').classList.add('active');
-					document.getElementById('btn-officer').classList.add('active');
-				} else {
-					document.getElementById('branchFormContainer').classList.add('active');
-					document.getElementById('btn-branch').classList.add('active');
-				}
-				
-				// Force Tally rendering initialization refresh to align elements
-				if (typeof Tally !== "undefined") { Tally.loadEmbeds(); }
-			}
-
-			// Core Tally runtime script loader
-			var d=document,w=window,c="c";const loadTally=()=>{if(typeof Tally!=="undefined"){Tally.loadEmbeds()}else{if(d.querySelector('script[src="https://tally.so"]')==null){const s=d.createElement("script");s.src="https://tally.so";s.onload=function(){if(typeof Tally!=="undefined")Tally.loadEmbeds()};s.onerror=function(){};d.body.appendChild(s)}}};if(typeof Tally!=="undefined"){Tally.loadEmbeds()}else w.addEventListener("load",loadTally);
-		</script>
 
 	</body>
 </html>
