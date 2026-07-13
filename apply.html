@@ -9,7 +9,7 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		
 		<style>
-			/* PREMIUM MATCHING WRAPPER SYSTEM */
+			/* THE ORIGINAL, PREMIUM SLICK WRAPPER SYSTEM COMPONENT */
 			#main {
 				max-width: 50rem !important;
 				width: 90% !important;
@@ -21,7 +21,7 @@
 				box-shadow: 0 20px 50px rgba(0,0,0,0.3) !important;
 			}
 
-			/* SECTION HEADLINE CONTENT FIX */
+			/* SECTION HEADLINE LAYOUT FIXES */
 			#main h2 {
 				margin-bottom: 0.5rem;
 			}
@@ -30,7 +30,7 @@
 				color: rgba(255, 255, 255, 0.6);
 			}
 
-			/* FORM SECTION SEPARATORS */
+			/* FORM PANEL CONSTRAINTS */
 			.form-section {
 				margin-top: 3.5rem;
 				padding-top: 2rem;
@@ -51,19 +51,18 @@
 				text-align: center;
 			}
 
-			/* THE FORMATTING VISIBILITY FIX CONTROLLER */
-			.iframe-box {
+			/* TRANSPARENT CANVAS WINDOW ENGINE */
+			.iframe-container {
 				width: 100%;
-				background: #ffffff; /* Creates a clean white canvas block so dark form labels are 100% visible */
-				border-radius: 8px;
-				padding: 1.5rem;
-				box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+				background: transparent !important;
+				border-radius: 6px;
 				overflow: hidden;
 			}
-			.iframe-box iframe {
+			.iframe-container iframe {
 				width: 100%;
 				display: block;
 				border: none;
+				background: transparent !important;
 			}
 		</style>
 	</head>
@@ -92,20 +91,19 @@
 					<p class="subtitle">Fill out your application directly on our platform below.</p>
 				</header>
 
-				<!-- Standard Embedded Form Section 1: Officer Application -->
+				<!-- Standard Embedded Form Section 1: Officer -->
 				<div class="form-section">
 					<h3>Officer Application</h3>
-					<div class="iframe-box">
+					<div class="iframe-container">
 						<iframe src="https://tally.so" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" title="Officer Application"></iframe>
 					</div>
 				</div>
 
-				<!-- Standard Embedded Form Section 2: Branch Creation Application -->
+				<!-- Standard Embedded Form Section 2: Branch -->
 				<div class="form-section">
 					<h3>Start a New Branch</h3>
-					<div class="iframe-box">
-						<!-- Core Fix: Swapped from data-tally-src to native standard src tag to prevent connections drops -->
-						<iframe src="https://tally.so" width="100%" height="950" frameborder="0" marginheight="0" marginwidth="0" title="Start your own branch"></iframe>
+					<div class="iframe-container">
+						<iframe src="https://tally.so" width="100%" height="850" frameborder="0" marginheight="0" marginwidth="0" title="Start a New Branch"></iframe>
 					</div>
 				</div>
 
@@ -123,8 +121,8 @@
 		<!-- Theme Initializer System Scripts -->
 		<script src="assets/js/main.js"></script>
 		
-		<!-- Tally Standard Embed Core Engine Loader script -->
-		<script async src="https://tally.so/widgets/embed.js"></script>
+		<!-- Standard Tally Widget Fallback Engine -->
+		<script async src="https://tally.so"></script>
 
 	</body>
 </html>
