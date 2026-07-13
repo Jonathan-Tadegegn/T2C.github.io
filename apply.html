@@ -1,58 +1,234 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
 		<title>Apply Now - Trash 2 Change (T2C)</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link rel="preconnect" href="https://googleapis.com"><link rel="preconnect" href="https://gstatic.com" crossorigin><link href="https://googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+		
+		<!-- Premium Typography Setup -->
+		<link rel="preconnect" href="https://googleapis.com">
+		<link rel="preconnect" href="https://gstatic.com" crossorigin>
+		<link href="https://googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
 		<style>
-			body, input, select, textarea, p, .button, h3 { font-family: "Source Sans Pro", sans-serif !important; }
-			h1, h2, h4, #main > header h2 { font-family: 'Playfair Display', Georgia, serif !important; text-transform: none !important; }
+			/* CORE SYSTEM OVERRIDES */
+			* { box-sizing: border-box; margin: 0; padding: 0; }
+			
+			body {
+				font-family: 'Inter', sans-serif !important;
+				background-color: #f8f9fa;
+				color: #1b4332;
+				line-height: 1.65;
+				display: flex;
+				flex-direction: column;
+				min-height: 100vh;
+			}
+
+			h1, h2, h3 {
+				font-family: 'Playfair Display', Georgia, serif !important;
+				font-weight: 700;
+				color: #2d6a4f;
+				letter-spacing: -0.01em;
+			}
+
+			/* TOP NAVIGATION HEADER PANEL */
+			#header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0 3rem;
+				height: 4.5rem;
+				background-color: #1b4332;
+				position: fixed;
+				top: 0;
+				width: 100%;
+				z-index: 1000;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+			}
+			#header h1 a {
+				color: #ffffff;
+				text-decoration: none;
+				font-weight: 700;
+				font-size: 1.5rem;
+			}
+			#nav-links {
+				display: flex;
+				list-style: none;
+				gap: 2rem;
+				align-items: center;
+			}
+			#nav-links a {
+				color: #ffffff;
+				text-decoration: none;
+				font-weight: 500;
+				font-size: 0.95rem;
+			}
+			#nav-links a:hover {
+				color: #b7e4c7;
+			}
+			#nav-links .coming-soon {
+				opacity: 0.45;
+				cursor: default;
+				color: #ffffff;
+			}
+			#nav-links .donate-btn {
+				background-color: #2d6a4f;
+				padding: 0.5rem 1.2rem;
+				border-radius: 5px;
+				font-weight: 600;
+			}
+
+			/* APPLICATION PAGE CONTENT */
+			.apply-container {
+				max-width: 44rem;
+				margin: 8rem auto 4rem auto;
+				padding: 0 2rem;
+				text-align: center;
+				flex-grow: 1;
+				width: 100%;
+			}
+			.apply-container h2 {
+				font-size: 2.8rem !important;
+				margin-bottom: 1rem;
+			}
+			.apply-container p {
+				font-size: 1.1rem;
+				color: #40514e;
+				margin-bottom: 2rem;
+			}
+
+			/* APPLICATION TOGGLE SWITCHES */
+			.toggle-container {
+				display: flex;
+				justify-content: center;
+				gap: 1rem;
+				margin-bottom: 2.5rem;
+			}
+			.toggle-btn {
+				background-color: #e9ecef;
+				color: #2d6a4f;
+				border: 2px solid transparent;
+				padding: 0.75rem 1.5rem;
+				font-size: 1rem;
+				font-weight: 600;
+				border-radius: 6px;
+				cursor: pointer;
+				transition: all 0.2s ease;
+			}
+			.toggle-btn:hover {
+				background-color: #d8f3dc;
+			}
+			.toggle-btn.active {
+				background-color: #2d6a4f;
+				color: #ffffff;
+				box-shadow: 0 4px 12px rgba(45, 106, 79, 0.15);
+			}
+
+			/* EMBED CLEAN WINDOW BOX */
+			.form-wrapper {
+				width: 100%;
+				background: #ffffff;
+				border-radius: 8px;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+				padding: 1rem;
+				overflow: hidden;
+			}
+			.form-frame {
+				display: none; /* Hidden by default via Javascript toggling */
+				width: 100%;
+				border: none;
+			}
+			.form-frame.active {
+				display: block; /* Shows when active */
+			}
+
+			/* FOOTER TERMINAL PANEL */
+			#footer {
+				background-color: #1b4332;
+				padding: 3rem 2rem;
+				text-align: center;
+				margin-top: auto;
+			}
+			#footer p {
+				color: #b7e4c7;
+				font-size: 0.9rem;
+			}
+
+			@media (max-width: 768px) {
+				#header { padding: 0 1rem; }
+				#nav-links { gap: 0.8rem; }
+				#nav-links a { font-size: 0.78rem; }
+				.apply-container h2 { font-size: 2.2rem !important; }
+				.toggle-container { flex-direction: column; gap: 0.5rem; }
+			}
 		</style>
 	</head>
-	<body class="is-preload">
-		<div id="page-wrapper">
-			<header id="header">
-				<h1><a href="index.html">t2c</a></h1>
-				<nav id="nav">
-					<ul>
-						<li class="special">
-							<a href="#menu" class="menuToggle"><span>Menu</span></a>
-							<div id="menu">
-								<ul>
-									<li><a href="index.html">Home</a></li>
-									<li><a href="about.html">About Us</a></li>
-									<li><a href="officers.html">Meet the Officers</a></li>
-									<li><a href="javascript:void(0);" style="cursor: default; opacity: 0.5; pointer-events: none;">Branches (Coming Soon)</a></li>
-									<li><a href="apply.html">Apply Now</a></li>
-									<li><a href="https://paypal.com" class="button primary fit" target="_blank">Donate Now</a></li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</nav>
-			</header>
-			<article id="main">
-				<header>
-					<h2>Join the Leadership Team</h2>
-					<p>Apply for a branch charter or centralized team role below.</p>
-				</header>
-				<section class="wrapper style5">
-					<div class="inner">
-						<h3 style="text-align: center; margin-bottom: 0.5em;">Option 1: Start a New Branch</h3>
-						<iframe src="https://google.com" width="100%" height="600" frameborder="0">Loading…</iframe>
-						<hr />
-						<h3 style="text-align: center; margin-top: 3em; margin-bottom: 0.5em;">Option 2: Apply to Become an Officer</h3>
-						<iframe src="https://google.com" width="100%" height="600" frameborder="0">Loading…</iframe>
-					</div>
-				</section>
-			</article>
-			<footer id="footer">
-				<ul class="copyright"><li>&copy; Trash 2 Change. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li></ul>
-			</footer>
-		</div>
-		<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrolly.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/browser.min.js"></script><script src="assets/js/breakpoints.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script>
+	<body>
+
+		<!-- Header Menu Wrapper -->
+		<header id="header">
+			<h1><a href="index.html">t2c</a></h1>
+			<nav>
+				<ul id="nav-links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="officers.html">Meet the Officers</a></li>
+					<li><a class="coming-soon">Branches (Coming Soon)</a></li>
+					<li><a href="apply.html">Apply Now</a></li>
+					<li><a href="https://paypal.com" class="donate-btn" target="_blank">Donate Now</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main Application Prompt Block -->
+		<main class="apply-container">
+			<h2>Join Trash 2 Change</h2>
+			<p>Select the option below to fill out your application directly on our secure hub platform.</p>
+			
+			<!-- Selection Toggles -->
+			<div class="toggle-container">
+				<button class="toggle-btn active" onclick="switchForm('officer')">Apply as an Officer</button>
+				<button class="toggle-btn" onclick="switchForm('branch')">Start a New Branch</button>
+			</div>
+
+			<!-- Embed Shell -->
+			<div class="form-wrapper">
+				<!-- Form 1: Officer Application -->
+				<iframe id="officerForm" class="form-frame active" data-tally-src="https://tally.so/embed/NpQA00?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" title="Officer Application"></iframe>
+				
+				<!-- Form 2: Branch Application -->
+				<iframe id="branchForm" class="form-frame" data-tally-src="https://tally.so/embed/eqlBLx?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" title="Start your own branch"></iframe>
+			</div>
+		</main>
+
+		<!-- Footer Configuration Area -->
+		<footer id="footer">
+			<p>&copy; Trash 2 Change Organization. All rights reserved.</p>
+		</footer>
+
+		<!-- Smart Core Engine for Form Switching and Tally Resizing -->
+		<script>
+			function switchForm(type) {
+				// Remove active states from buttons
+				document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+				// Remove active states from forms
+				document.querySelectorAll('.form-frame').forEach(frame => frame.classList.remove('active'));
+				
+				if(type === 'officer') {
+					document.getElementById('officerForm').classList.add('active');
+					event.currentTarget.classList.add('active');
+				} else {
+					document.getElementById('branchForm').classList.add('active');
+					event.currentTarget.classList.add('active');
+				}
+				
+				// Force Tally engine to adjust the viewport layout instantly
+				if (typeof Tally !== "undefined") { Tally.loadEmbeds(); }
+			}
+
+			// Core Tally runtime script hook 
+			var d=document,w=window,c="c";const loadTally=()=>{if(typeof Tally!=="undefined"){Tally.loadEmbeds()}else{if(d.querySelector('script[src="https://tally.so"]')==null){const s=d.createElement("script");s.src="https://tally.so";s.onload=function(){if(typeof Tally!=="undefined")Tally.loadEmbeds()};s.onerror=function(){};d.body.appendChild(s)}}};if(typeof Tally!=="undefined"){Tally.loadEmbeds()}else{w.addEventListener("load",loadTally);}
+		</script>
+
 	</body>
 </html>
