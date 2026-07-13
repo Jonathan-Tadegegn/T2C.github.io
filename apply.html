@@ -50,6 +50,21 @@
 				margin-bottom: 1.5rem;
 				text-align: center;
 			}
+
+			/* THE FORMATTING VISIBILITY FIX CONTROLLER */
+			.iframe-box {
+				width: 100%;
+				background: #ffffff; /* Creates a clean white canvas block so dark form labels are 100% visible */
+				border-radius: 8px;
+				padding: 1.5rem;
+				box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+				overflow: hidden;
+			}
+			.iframe-box iframe {
+				width: 100%;
+				display: block;
+				border: none;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -80,13 +95,18 @@
 				<!-- Standard Embedded Form Section 1: Officer Application -->
 				<div class="form-section">
 					<h3>Officer Application</h3>
-					<iframe data-tally-src="https://tally.so/embed/NpQA00?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Officer Application"></iframe>
+					<div class="iframe-box">
+						<iframe src="https://tally.so" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" title="Officer Application"></iframe>
+					</div>
 				</div>
 
 				<!-- Standard Embedded Form Section 2: Branch Creation Application -->
 				<div class="form-section">
 					<h3>Start a New Branch</h3>
-					<iframe data-tally-src="https://tally.so" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Start your own ___ 2 Change or start a new branch of Trash 2 Change"></iframe>
+					<div class="iframe-box">
+						<!-- Core Fix: Swapped from data-tally-src to native standard src tag to prevent connections drops -->
+						<iframe src="https://tally.so" width="100%" height="950" frameborder="0" marginheight="0" marginwidth="0" title="Start your own branch"></iframe>
+					</div>
 				</div>
 
 			</section>
@@ -103,10 +123,8 @@
 		<!-- Theme Initializer System Scripts -->
 		<script src="assets/js/main.js"></script>
 		
-		<!-- Tally Standard Embed Unified Script Engine -->
-		<script>
-			var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
-		</script>
+		<!-- Tally Standard Embed Core Engine Loader script -->
+		<script async src="https://tally.so/widgets/embed.js"></script>
 
 	</body>
 </html>
