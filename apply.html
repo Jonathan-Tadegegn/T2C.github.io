@@ -1,256 +1,130 @@
 <!DOCTYPE HTML>
-<html lang="en">
+
+<html>
 	<head>
-		<title>Apply Now - Trash 2 Change (T2C)</title>
+		<title>Apply Now - Trash 2 Change</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		
-		<!-- Premium Typography Setup -->
-		<link rel="preconnect" href="https://googleapis.com">
-		<link rel="preconnect" href="https://gstatic.com" crossorigin>
-		<link href="https://googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* CORE SYSTEM OVERRIDES */
-			* { box-sizing: border-box; margin: 0; padding: 0; }
-			
-			body {
-				font-family: 'Inter', sans-serif !important;
-				background-color: #f8f9fa;
-				color: #1b4332;
-				line-height: 1.65;
-				display: flex;
-				flex-direction: column;
-				min-height: 100vh;
+			/* PREMIUM MATCHING WRAPPER SYSTEM */
+			#main {
+				max-width: 50rem !important;
+				width: 90% !important;
+				padding: 3rem 2rem !important;
+				margin: 4rem auto !important;
+				background: rgba(255, 255, 255, 0.04) !important;
+				border-radius: 8px !important;
+				border: 1px solid rgba(255, 255, 255, 0.1) !important;
+				box-shadow: 0 20px 50px rgba(0,0,0,0.3) !important;
 			}
 
-			h1, h2, h3 {
-				font-family: 'Playfair Display', Georgia, serif !important;
-				font-weight: 700;
-				color: #2d6a4f;
-				letter-spacing: -0.01em;
-			}
-
-			/* TOP NAVIGATION HEADER PANEL */
-			#header {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				padding: 0 3rem;
-				height: 4.5rem;
-				background-color: #1b4332;
-				position: fixed;
-				top: 0;
-				width: 100%;
-				z-index: 1000;
-				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-			}
-			#header h1 a {
-				color: #ffffff;
-				text-decoration: none;
-				font-weight: 700;
-				font-size: 1.5rem;
-			}
-			#nav-links {
-				display: flex;
-				list-style: none;
-				gap: 2rem;
-				align-items: center;
-			}
-			#nav-links a {
-				color: #ffffff;
-				text-decoration: none;
-				font-weight: 500;
-				font-size: 0.95rem;
-			}
-			#nav-links a:hover {
-				color: #b7e4c7;
-			}
-			#nav-links .coming-soon {
-				opacity: 0.45;
-				cursor: default;
-				color: #ffffff;
-			}
-			#nav-links .donate-btn {
-				background-color: #2d6a4f;
-				padding: 0.5rem 1.2rem;
-				border-radius: 5px;
-				font-weight: 600;
-			}
-
-			/* PAGE HERO BANNER BACKGROUND PANEL */
-			#banner {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				text-align: center;
-				min-height: 40vh;
-				background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(27, 67, 50, 0.8)), 
-							url('https://unsplash.com');
-				background-size: cover;
-				background-position: center;
-				color: #ffffff;
-				padding: 6rem 2rem 2rem 2rem;
-				margin-bottom: 3rem;
-			}
-			#banner h2 {
-				font-size: 3.5rem !important;
-				color: #ffffff !important;
-				margin-bottom: 0.5rem;
-			}
-			#banner p {
-				font-size: 1.2rem;
-				color: #d8f3dc;
-				max-width: 36rem;
-				margin: 0 auto;
-			}
-
-			/* APPLICATION LAYOUT WRAPPER */
-			.apply-container {
-				max-width: 68rem; /* Expanded from 44rem to give maximum form space */
-				margin: 0 auto 5rem auto;
-				padding: 0 2rem;
-				text-align: center;
-				flex-grow: 1;
-				width: 100%;
-			}
-
-			/* SELECTION MENU SWITCH PANEL */
+			/* NAV PANELS MATCHING MENU SYSTEM */
 			.toggle-container {
 				display: flex;
 				justify-content: center;
 				gap: 1rem;
-				margin-bottom: 2.5rem;
+				margin: 2rem 0;
 			}
 			.toggle-btn {
-				background-color: #e9ecef;
-				color: #2d6a4f;
-				border: 2px solid transparent;
-				padding: 0.85rem 2rem;
-				font-size: 1rem;
+				background: transparent;
+				color: #ffffff !important;
+				border: 1px solid rgba(255, 255, 255, 0.2) !important;
+				padding: 0.65rem 1.5rem;
+				font-size: 0.85rem;
 				font-weight: 600;
-				border-radius: 6px;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				border-radius: 4px;
 				cursor: pointer;
 				transition: all 0.2s ease;
 			}
 			.toggle-btn:hover {
-				background-color: #d8f3dc;
+				background: rgba(255, 255, 255, 0.05);
+				border-color: #ffffff !important;
 			}
 			.toggle-btn.active {
-				background-color: #2d6a4f;
-				color: #ffffff;
-				box-shadow: 0 4px 12px rgba(45, 106, 79, 0.15);
+				background: #ffffff !important;
+				color: #1c1d22 !important;
+				border-color: #ffffff !important;
 			}
 
-			/* MAX-SIZE EMBED CLEAN CONTAINER BOX */
+			/* BULLETPROOF FORM VIEW MODULE */
 			.form-wrapper {
 				width: 100%;
-				background: #ffffff;
-				border-radius: 12px;
-				box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-				padding: 1.5rem;
-				min-height: 700px;
+				min-height: 650px;
 				position: relative;
+				margin-top: 1.5rem;
 			}
-			
-			/* CRITICAL FIX FOR TALLY DISPLAY LAYER RENDERING */
 			.form-frame {
-				position: absolute;
-				top: 1.5rem;
-				left: 1.5rem;
-				width: calc(100% - 3rem);
-				height: 100%;
+				width: 100%;
+				height: 650px;
 				border: none;
-				visibility: hidden;
-				opacity: 0;
-				z-index: 1;
-				transition: opacity 0.15s ease-in-out;
+				display: none; /* Controlled cleanly by script layer */
 			}
 			.form-frame.active {
-				visibility: visible;
-				opacity: 1;
-				z-index: 10;
-				position: relative;
-				top: 0;
-				left: 0;
-				width: 100%;
-			}
-
-			/* FOOTER TERMINAL PANEL */
-			#footer {
-				background-color: #1b4332;
-				padding: 3rem 2rem;
-				text-align: center;
-				margin-top: auto;
-			}
-			#footer p {
-				color: #b7e4c7;
-				font-size: 0.9rem;
-			}
-
-			@media (max-width: 768px) {
-				#header { padding: 0 1rem; }
-				#nav-links { gap: 0.8rem; }
-				#nav-links a { font-size: 0.78rem; }
-				#banner h2 { font-size: 2.2rem !important; }
-				.toggle-container { flex-direction: column; gap: 0.5rem; }
-				.form-wrapper { padding: 0.5rem; min-height: 600px; }
+				display: block;
 			}
 		</style>
 	</head>
-	<body>
+	<body class="is-preload">
 
-		<!-- Header Menu Wrapper -->
-		<header id="header">
-			<h1><a href="index.html">t2c</a></h1>
-			<nav>
-				<ul id="nav-links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About Us</a></li>
-					<li><a href="officers.html">Meet the Officers</a></li>
-					<li><a class="coming-soon">Branches (Coming Soon)</a></li>
-					<li><a href="apply.html">Apply Now</a></li>
-					<li><a href="https://paypal.com" class="donate-btn" target="_blank">Donate Now</a></li>
+		<!-- Main Page Canvas Wrapper -->
+		<div id="wrapper">
+
+			<!-- Global Header Navigation Menu -->
+			<header id="header">
+				<h1><a href="index.html">Trash 2 Change</a></h1>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="officers.html">Meet the Officers</a></li>
+						<li><a href="apply.html" class="active">Apply Now</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Dark-Themed Content Body Card -->
+			<section id="main">
+				<header>
+					<h2>Join Our Mission</h2>
+					<p>Select an option below to fill out your application directly on our secure portal.</p>
+				</header>
+
+				<!-- Navigation Selection Tabs -->
+				<div class="toggle-container">
+					<button class="toggle-btn active" id="btn-officer" onclick="switchForm('officer')">Apply as an Officer</button>
+					<button class="toggle-btn" id="btn-branch" onclick="switchForm('branch')">Start a New Branch</button>
+				</div>
+
+				<!-- Embedded Tally System Canvas Box -->
+				<div class="form-wrapper">
+					<!-- Form 1: Officer Portal (Loads immediately on open) -->
+					<iframe id="officerForm" class="form-frame active" src="https://tally.so"></iframe>
+					
+					<!-- Form 2: Branch Creation Portal (Loads inside secondary memory stack) -->
+					<iframe id="branchForm" class="form-frame" data-src="https://tally.so"></iframe>
+				</div>
+			</section>
+
+			<!-- Template Layout Footer -->
+			<footer id="footer">
+				<ul class="copyright">
+					<li>&copy; Trash 2 Change. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
-			</nav>
-		</header>
+			</footer>
 
-		<!-- Restoration Section Header Banner -->
-		<section id="banner">
-			<div class="inner">
-				<h2>Join Trash 2 Change</h2>
-				<p>Select the option below to fill out your application directly on our secure hub platform.</p>
-			</div>
-		</section>
+		</div>
 
-		<!-- Expanded Main Application Block -->
-		<main class="apply-container">
-			
-			<!-- Selection Toggles -->
-			<div class="toggle-container">
-				<button class="toggle-btn active" id="btn-officer" onclick="switchForm('officer')">Apply as an Officer</button>
-				<button class="toggle-btn" id="btn-branch" onclick="switchForm('branch')">Start a New Branch</button>
-			</div>
+		<!-- Theme Initializer System Scripts -->
+		<script src="assets/js/main.js"></script>
 
-			<!-- Large Display Shell -->
-			<div class="form-wrapper">
-				<!-- Form 1: Officer Application -->
-				<iframe id="officerForm" class="form-frame active" data-tally-src="https://tally.so" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0" title="Officer Application"></iframe>
-				
-				<!-- Form 2: Branch Application -->
-				<iframe id="branchForm" class="form-frame" data-tally-src="https://tally.so" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0" title="Start your own branch"></iframe>
-			</div>
-		</main>
-
-		<!-- Footer Configuration Area -->
-		<footer id="footer">
-			<p>&copy; Trash 2 Change Organization. All rights reserved.</p>
-		</footer>
-
-		<!-- Smart Core Engine for Form Switching and Tally Resizing -->
+		<!-- Smart Tally Switch & Render script Engine -->
 		<script>
 			function switchForm(type) {
-				// Remove active status tags from all elements
+				// Remove active highlight traits across elements
 				document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
 				document.querySelectorAll('.form-frame').forEach(frame => frame.classList.remove('active'));
 				
@@ -258,15 +132,22 @@
 					document.getElementById('officerForm').classList.add('active');
 					document.getElementById('btn-officer').classList.add('active');
 				} else {
-					document.getElementById('branchForm').classList.add('active');
+					const branchFrame = document.getElementById('branchForm');
+					
+					// Core Fix: Lazily pass the real URL source code when clicked so it loads instantly
+					if (!branchFrame.getAttribute('src')) {
+						branchFrame.setAttribute('src', branchFrame.getAttribute('data-src'));
+					}
+					
+					branchFrame.classList.add('active');
 					document.getElementById('btn-branch').classList.add('active');
 				}
 				
-				// Force Tally layout initialization refresh
+				// Force Tally sizing calculations to adjust viewport values
 				if (typeof Tally !== "undefined") { Tally.loadEmbeds(); }
 			}
 
-			// Core Tally runtime script hook 
+			// Automated initialization link logic 
 			var d=document,w=window,c="c";const loadTally=()=>{if(typeof Tally!=="undefined"){Tally.loadEmbeds()}else{if(d.querySelector('script[src="https://tally.so"]')==null){const s=d.createElement("script");s.src="https://tally.so";s.onload=function(){if(typeof Tally!=="undefined")Tally.loadEmbeds()};s.onerror=function(){};d.body.appendChild(s)}}};if(typeof Tally!=="undefined"){Tally.loadEmbeds()}else w.addEventListener("load",loadTally);
 		</script>
 
