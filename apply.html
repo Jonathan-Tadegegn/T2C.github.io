@@ -9,7 +9,7 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		
 		<!-- Tally Core Engine Loader Widget -->
-		<script async src="https://tally.so"></script>
+		<script async src="https://tally.so/widgets/embed.js"></script>
 
 		<style>
 			/* PREMIUM MATCHING WRAPPER SYSTEM */
@@ -34,20 +34,21 @@
 				width: 100%;
 			}
 
-			/* BULLETPROOF HOVER BUTTON OVERRIDES */
+			/* THE BUTTON REPAIR SYSTEM OVERRIDE */
 			.portal-btn {
-				display: flex !important;
-				align-items: center !important;
-				justify-content: center !important;
+				display: block !important; /* Restored to standard block so Tally can identify it instantly */
 				width: 100% !important;
 				max-width: 32rem !important;
-				height: 3.8rem !important; /* Forces an expanded fixed height box */
-				line-height: 1 !important; /* Completely resets the squished line tracking */
+				
+				/* Pure spacing alignment engine to center text vertically without breaking scripts */
+				padding: 1.2rem 1.5rem !important; 
+				height: auto !important; 
+				line-height: 1.4 !important; 
+				
 				background: transparent !important;
 				color: #ffffff !important;
 				border: 1px solid rgba(255, 255, 255, 0.25) !important;
-				padding: 0 1.5rem !important; /* Strategic padding boundaries */
-				font-size: 0.85rem !important; /* Sleek elegant text scaling */
+				font-size: 0.85rem !important;
 				font-weight: 600 !important;
 				letter-spacing: 0.15em !important;
 				text-transform: uppercase !important;
