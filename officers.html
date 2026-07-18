@@ -32,7 +32,7 @@
 				background-color: #132a1f !important;
 			}
 
-			/* THE MAIN CONTAINER PANEL (PRESERVED SLEEK DARK BACKDROP TINT) */
+			/* THE MAIN CONTAINER PANEL */
 			#main {
 				max-width: 65rem !important; 
 				width: 90% !important;
@@ -44,14 +44,23 @@
 				border-radius: 8px !important;
 			}
 
-			/* KEEP ONLY THE MAIN HERO HEADINGS WHITE */
+			/* THE EXACT FIX: WIPE OUT THE BROWN BOX OVERLAY BEHIND THE TITLE */
+			#main > header {
+				background: transparent !important; /* Erases the brown gradient block */
+				border: none !important;
+				box-shadow: none !important;
+				padding: 0 0 2rem 0 !important;
+				margin-bottom: 2rem !important;
+			}
+
+			/* MAIN HERO HEADINGS WHITE */
 			#main h2 {
 				margin-bottom: 0.5rem;
-				color: #ffffff !important; /* Main title strictly stays white */
+				color: #ffffff !important; 
 			}
 			#main p.subtitle {
-				margin-bottom: 4rem;
-				color: rgba(255, 255, 255, 0.6) !important; /* Main subtitle strictly stays light grey */
+				margin-bottom: 0 !important; /* Reset margin due to section layout update */
+				color: rgba(255, 255, 255, 0.6) !important; 
 				letter-spacing: 0.1em;
 				text-transform: uppercase;
 				font-size: 0.8rem;
@@ -70,13 +79,12 @@
 				border-top: none;
 			}
 			
-			/* COLOURED GREEN TO MATCH YOUR CHOSEN IMAGE PALETTE */
 			.department-title {
 				font-size: 1.1rem !important;
 				font-weight: 600 !important;
 				letter-spacing: 0.2em !important;
 				text-transform: uppercase !important;
-				color: #2d6a4f !important; /* Department titles turned to dark eco-green */
+				color: #2d6a4f !important; 
 				margin-bottom: 2.5rem !important;
 				text-align: center;
 			}
@@ -122,20 +130,19 @@
 				object-fit: cover;
 			}
 
-			/* COLOURED GREEN TO MATCH YOUR CHOSEN IMAGE PALETTE */
 			.officer-name {
 				font-size: 1.05rem !important;
 				font-weight: 600 !important;
 				letter-spacing: 0.12em !important;
 				text-transform: uppercase !important;
-				color: #2d6a4f !important; /* Officer names turned to dark eco-green */
+				color: #2d6a4f !important; 
 				margin-bottom: 0.4rem !important;
 			}
 			
 			.officer-role {
 				font-size: 0.85rem !important;
 				font-style: italic !important;
-				color: #2d6a4f !important; /* Officer positions turned to dark eco-green */
+				color: #2d6a4f !important; 
 				letter-spacing: 0.05em !important;
 				opacity: 0.85;
 			}
