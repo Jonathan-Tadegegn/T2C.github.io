@@ -1,18 +1,16 @@
-<!DOCTYPE HTML>
-
-<html>
-	<head>
-		<title>Apply Now - Trash 2 Change</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+@@ -8,70 +8,53 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		
+
+		<!-- Tally Core Engine Loader Widget -->
+		<script async src="https://tally.so"></script>
+
 		<style>
-			/* THE ORIGINAL, PREMIUM SLICK WRAPPER SYSTEM COMPONENT */
+			/* PREMIUM MATCHING WRAPPER SYSTEM */
 			#main {
 				max-width: 50rem !important;
 				width: 90% !important;
+				padding: 4rem 2rem !important;
 				padding: 3rem 2rem !important;
 				margin: 4rem auto !important;
 				background: rgba(255, 255, 255, 0.04) !important;
@@ -21,16 +19,55 @@
 				box-shadow: 0 20px 50px rgba(0,0,0,0.3) !important;
 			}
 
-			/* SECTION HEADLINE LAYOUT FIXES */
+			/* ACTION LAYOUT WRAPPER */
+			.action-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1.2rem;
+				margin-top: 2.5rem;
+				width: 100%;
+			}
+
+			/* PREMIUM HOVER BUTTON LAYOUT */
+			.portal-btn {
+				display: block;
+				width: 100%;
+				max-width: 24rem;
+				background: transparent;
+				color: #ffffff !important;
+				border: 1px solid rgba(255, 255, 255, 0.25) !important;
+				padding: 1rem 1.5rem;
+				font-size: 0.9rem;
+				font-weight: 600;
+				letter-spacing: 0.15em;
+				text-transform: uppercase;
+				text-decoration: none;
+				border-radius: 4px;
+				cursor: pointer;
+				text-align: center;
+				transition: all 0.25s ease-in-out;
+			/* SECTION HEADLINE CONTENT FIX */
 			#main h2 {
 				margin-bottom: 0.5rem;
 			}
+			
+			.portal-btn:hover {
+				background: #ffffff !important;
+				color: #1c1d22 !important;
+				border-color: #ffffff !important;
+				box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+				transform: translateY(-2px);
 			#main p.subtitle {
 				margin-bottom: 2.5rem;
 				color: rgba(255, 255, 255, 0.6);
 			}
 
-			/* FORM PANEL CONSTRAINTS */
+			.secure-badge {
+				font-size: 0.75rem;
+				color: rgba(255, 255, 255, 0.4);
+				letter-spacing: 0.05em;
+			/* FORM SECTION SEPARATORS */
 			.form-section {
 				margin-top: 3.5rem;
 				padding-top: 2rem;
@@ -50,20 +87,6 @@
 				margin-bottom: 1.5rem;
 				text-align: center;
 			}
-
-			/* TRANSPARENT CANVAS WINDOW ENGINE */
-			.iframe-container {
-				width: 100%;
-				background: transparent !important;
-				border-radius: 6px;
-				overflow: hidden;
-			}
-			.iframe-container iframe {
-				width: 100%;
-				display: block;
-				border: none;
-				background: transparent !important;
-			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -72,39 +95,40 @@
 		<div id="wrapper">
 
 			<!-- Global Header Navigation Menu -->
-			<header id="header">
-				<h1><a href="index.html">Trash 2 Change</a></h1>
-				<nav>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="officers.html">Meet the Officers</a></li>
-						<li><a href="apply.html" class="active">Apply Now</a></li>
-					</ul>
-				</nav>
-			</header>
-
-			<!-- Dark-Themed Content Body Card -->
+@@ -91,29 +74,24 @@ <h1><a href="index.html">Trash 2 Change</a></h1>
 			<section id="main">
 				<header>
 					<h2>Join Our Mission</h2>
+					<p>Select an application option below to open the form portal.</p>
 					<p class="subtitle">Fill out your application directly on our platform below.</p>
 				</header>
 
-				<!-- Standard Embedded Form Section 1: Officer -->
+				<!-- Selection Buttons linking to Tally's Popup Engine via Data-Attributes -->
+				<div class="action-container">
+					
+					<!-- Button 1: Officer Registration Popup -->
+					<button class="portal-btn" data-tally-open="NpQA00" data-tally-layout="modal" data-tally-width="600" data-tally-hide-title="1" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+						Apply as an Officer
+					</button>
+					
+					<!-- Button 2: Branch Registration Popup -->
+					<button class="portal-btn" data-tally-open="eqlBLx" data-tally-layout="modal" data-tally-width="600" data-tally-hide-title="1" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+						Start a New Branch
+					</button>
+				<!-- Standard Embedded Form Section 1: Officer Application -->
 				<div class="form-section">
 					<h3>Officer Application</h3>
-					<div class="iframe-container">
-						<iframe src="https://tally.so" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" title="Officer Application"></iframe>
-					</div>
+					<iframe data-tally-src="https://tally.so/embed/NpQA00?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Officer Application"></iframe>
 				</div>
 
-				<!-- Standard Embedded Form Section 2: Branch -->
+					<div class="secure-badge">
+						🛡️ Powered by Tally Secure Form Processing
+					</div>
+					
+				<!-- Standard Embedded Form Section 2: Branch Creation Application -->
 				<div class="form-section">
 					<h3>Start a New Branch</h3>
-					<div class="iframe-container">
-						<iframe src="https://tally.so" width="100%" height="850" frameborder="0" marginheight="0" marginwidth="0" title="Start a New Branch"></iframe>
-					</div>
+					<iframe data-tally-src="https://tally.so" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Start your own ___ 2 Change or start a new branch of Trash 2 Change"></iframe>
 				</div>
 
 			</section>
@@ -113,16 +137,15 @@
 			<footer id="footer">
 				<ul class="copyright">
 					<li>&copy; Trash 2 Change. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</footer>
-
-		</div>
+@@ -124,6 +102,11 @@ <h2>Join Our Mission</h2>
 
 		<!-- Theme Initializer System Scripts -->
 		<script src="assets/js/main.js"></script>
 		
-		<!-- Standard Tally Widget Fallback Engine -->
-		<script async src="https://tally.so"></script>
+		<!-- Tally Standard Embed Unified Script Engine -->
+		<script>
+			var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+		</script>
 
 	</body>
 </html>
