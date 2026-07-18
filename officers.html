@@ -1,65 +1,165 @@
 <!DOCTYPE HTML>
+
 <html>
 	<head>
-		<title>Meet the Officers - Trash 2 Change (T2C)</title>
+		<title>Meet the Officers - Trash to Change</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link rel="preconnect" href="https://googleapis.com"><link rel="preconnect" href="https://gstatic.com" crossorigin><link href="https://googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+		
 		<style>
-			body, input, select, textarea, p, .button, h3 { font-family: "Source Sans Pro", sans-serif !important; }
-			h1, h2, h4, #main > header h2 { font-family: 'Playfair Display', Georgia, serif !important; text-transform: none !important; }
+			/* CORE OVERRIDE FOR THE MAIN CANVAS BACKGROUND */
+			body {
+				background-color: #1c1d22 !important; /* Forces the entire browser view background dark */
+			}
+
+			/* THE FIXED MAIN CONTAINER PANEL (CONVERTED FROM WHITE TO DARK) */
+			#main {
+				max-width: 60rem !important; 
+				width: 90% !important;
+				padding: 4rem 2rem !important;
+				margin: 4rem auto !important;
+				
+				/* Darkened background panel container matching your Apply Now look */
+				background: rgba(255, 255, 255, 0.04) !important; 
+				border: 1px solid rgba(255, 255, 255, 0.1) !important;
+				box-shadow: 0 20px 50px rgba(0,0,0,0.4) !important;
+				border-radius: 8px !important;
+			}
+
+			/* CONTENT TEXT COLOR FIXES */
+			#main h2 {
+				margin-bottom: 0.5rem;
+				color: #ffffff !important; /* High contrast heading */
+			}
+			#main p.subtitle {
+				margin-bottom: 3.5rem;
+				color: rgba(255, 255, 255, 0.6) !important;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				font-size: 0.8rem;
+			}
+
+			/* TEAM MATRIX GRID LAYOUT */
+			.team-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+				gap: 3rem 2rem;
+				width: 100%;
+				margin-top: 2rem;
+			}
+
+			/* BIO PROFILE CARD BLOCKS */
+			.officer-card {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				padding: 1rem;
+			}
+
+			/* PROFILE IMAGE CIRCLES */
+			.avatar-frame {
+				width: 9rem;
+				height: 9rem;
+				border-radius: 50%;
+				overflow: hidden;
+				margin-bottom: 1.5rem;
+				border: 2px solid rgba(255, 255, 255, 0.25);
+				
+				/* Premium Eco Forest Green Gradient Fill */
+				background: linear-gradient(135deg, #2d6a4f, #1b4332); 
+				
+				box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+				transition: transform 0.3s ease, border-color 0.3s ease;
+			}
+			.officer-card:hover .avatar-frame {
+				transform: translateY(-4px);
+				border-color: #ffffff;
+			}
+			.avatar-frame img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			/* TYPOGRAPHY MATRIX ALIGNMENTS */
+			.officer-name {
+				font-size: 1.1rem !important;
+				font-weight: 600 !important;
+				letter-spacing: 0.15em !important;
+				text-transform: uppercase !important;
+				color: #ffffff !important;
+				margin-bottom: 0.4rem !important;
+			}
+			.officer-role {
+				font-size: 0.85rem !important;
+				font-style: italic !important;
+				color: rgba(255, 255, 255, 0.6) !important;
+				letter-spacing: 0.05em !important;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
-		<div id="page-wrapper">
+
+		<div id="wrapper">
+
+			<!-- Global Header Navigation Menu -->
 			<header id="header">
-				<h1><a href="index.html">t2c</a></h1>
-				<nav id="nav">
+				<h1><a href="index.html">Trash to Change</a></h1>
+				<nav>
 					<ul>
-						<li class="special">
-							<a href="#menu" class="menuToggle"><span>Menu</span></a>
-							<div id="menu">
-								<ul>
-									<li><a href="index.html">Home</a></li>
-									<li><a href="about.html">About Us</a></li>
-									<li><a href="officers.html">Meet the Officers</a></li>
-									<li><a href="javascript:void(0);" style="cursor: default; opacity: 0.5; pointer-events: none;">Branches (Coming Soon)</a></li>
-									<li><a href="apply.html">Apply Now</a></li>
-									<li><a href="https://paypal.com" class="button primary fit" target="_blank">Donate Now</a></li>
-								</ul>
-							</div>
-						</li>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="officers.html" class="active">Meet the Officers</a></li>
+						<li><a href="apply.html">Apply Now</a></li>
 					</ul>
 				</nav>
 			</header>
-			<article id="main">
+
+			<!-- Dark-Themed Content Body Card -->
+			<section id="main">
 				<header>
 					<h2>Meet the Officers</h2>
-					<p>The dedicated team leading the Trash 2 Change vision.</p>
+					<p class="subtitle">The dedicated team leading the Trash to Change vision.</p>
 				</header>
-				<section class="wrapper style5">
-					<div class="inner">
-						<div class="row gtr-50">
-							<div class="col-6 col-12-medium" style="text-align: center; margin-bottom: 3em;">
-								<span class="image fit"><img src="images/pic01.jpg" alt="Officer 1" style="border-radius: 50%; max-width: 180px; margin: 0 auto 1.5rem auto;" /></span>
-								<h3 style="font-weight: 600;">Officer Name</h3>
-								<p style="font-style: italic;">President & Founder</p>
-							</div>
-							<div class="col-6 col-12-medium" style="text-align: center; margin-bottom: 3em;">
-								<span class="image fit"><img src="images/pic02.jpg" alt="Officer 2" style="border-radius: 50%; max-width: 180px; margin: 0 auto 1.5rem auto;" /></span>
-								<h3 style="font-weight: 600;">Officer Name</h3>
-								<p style="font-style: italic;">Vice President</p>
-							</div>
+
+				<!-- Fluid Core Roster Grid System -->
+				<div class="team-grid">
+					
+					<!-- Profile Card 1: President -->
+					<div class="officer-card">
+						<div class="avatar-frame">
+							<!-- Tip: Swap 'assets/images/placeholder.jpg' with your real uploaded profile picture link later -->
+							<img src="assets/images/placeholder.jpg" alt="Officer Avatar" onerror="this.style.display='none';">
 						</div>
+						<div class="officer-name">Officer Name</div>
+						<div class="officer-role">President & Founder</div>
 					</div>
-				</section>
-			</article>
+
+					<!-- Profile Card 2: Vice President -->
+					<div class="officer-card">
+						<div class="avatar-frame">
+							<img src="assets/images/placeholder.jpg" alt="Officer Avatar" onerror="this.style.display='none';">
+						</div>
+						<div class="officer-name">Officer Name</div>
+						<div class="officer-role">Vice President</div>
+					</div>
+
+				</div>
+			</section>
+
 			<footer id="footer">
-				<ul class="copyright"><li>&copy; Trash 2 Change. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li></ul>
+				<ul class="copyright">
+					<li>&copy; Trash to Change. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
 			</footer>
+
 		</div>
-		<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrolly.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/browser.min.js"></script><script src="assets/js/breakpoints.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script>
+
+		<!-- Theme Initializer System Scripts -->
+		<script src="assets/js/main.js"></script>
+
 	</body>
 </html>
