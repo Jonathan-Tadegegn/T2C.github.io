@@ -11,10 +11,10 @@
 		<style>
 			/* CORE OVERRIDE FOR THE MAIN CANVAS BACKGROUND */
 			body {
-				background-color: #1c1d22 !important;
+				background-color: #1c1d22 !important; /* Force the exact matching dark charcoal background */
 			}
 
-			/* THE MAIN CONTAINER PANEL (PRESERVED SLEEK DARK BACKDROP TINT) */
+			/* THE FIXED MAIN CONTAINER PANEL (PRESERVED DARK CHARCOAL CARD TINT) */
 			#main {
 				max-width: 65rem !important; 
 				width: 90% !important;
@@ -26,21 +26,21 @@
 				border-radius: 8px !important;
 			}
 
-			/* KEEP ONLY THE MAIN HERO HEADINGS WHITE */
+			/* HEADER TYPOGRAPHY CONFIGURATION */
 			#main h2 {
 				margin-bottom: 0.5rem;
-				color: #ffffff !important; /* Main title strictly stays white */
+				color: #ffffff !important;
 			}
 			#main p.subtitle {
 				margin-bottom: 4rem;
-				color: rgba(255, 255, 255, 0.6) !important; /* Main subtitle strictly stays light grey */
+				color: rgba(255, 255, 255, 0.6) !important;
 				letter-spacing: 0.1em;
 				text-transform: uppercase;
 				font-size: 0.8rem;
 				text-align: center;
 			}
 
-			/* PROFESSIONAL DEPARTMENTAL SECTIONS */
+			/* DEPARTMENTAL MATRIX BREAKS */
 			.department-section {
 				margin-top: 4rem;
 				padding-top: 2.5rem;
@@ -52,18 +52,17 @@
 				border-top: none;
 			}
 			
-			/* THE FIX: COLOURED GREEN TO MATCH YOUR CHOSEN IMAGE PALETTE */
 			.department-title {
 				font-size: 1.1rem !important;
 				font-weight: 600 !important;
 				letter-spacing: 0.2em !important;
 				text-transform: uppercase !important;
-				color: #2d6a4f !important; /* Department titles turned to dark eco-green */
+				color: #2d6a4f !important; /* Premium dark forest green */
 				margin-bottom: 2.5rem !important;
 				text-align: center;
 			}
 
-			/* TEAM MATRIX GRID LAYOUT */
+			/* TEAM GRID CONFIGURATIONS */
 			.team-grid {
 				display: flex;
 				flex-wrap: wrap;
@@ -72,7 +71,7 @@
 				width: 100%;
 			}
 
-			/* BIO PROFILE CARD BLOCKS */
+			/* BIOGRAPHY CARD ELEMENT SHELLS */
 			.officer-card {
 				display: flex;
 				flex-direction: column;
@@ -82,7 +81,7 @@
 				padding: 1rem;
 			}
 
-			/* PROFILE IMAGE CIRCLES */
+			/* AVATAR GEOMETRY WINDOWS */
 			.avatar-frame {
 				width: 8.5rem;
 				height: 8.5rem;
@@ -104,20 +103,20 @@
 				object-fit: cover;
 			}
 
-			/* COLOURED GREEN TO MATCH YOUR CHOSEN IMAGE PALETTE */
+			/* BIO TEXT COLOR SCHEME ATTACHMENTS */
 			.officer-name {
 				font-size: 1.05rem !important;
 				font-weight: 600 !important;
 				letter-spacing: 0.12em !important;
 				text-transform: uppercase !important;
-				color: #2d6a4f !important; /* Officer names turned to dark eco-green */
+				color: #2d6a4f !important;
 				margin-bottom: 0.4rem !important;
 			}
 			
 			.officer-role {
 				font-size: 0.85rem !important;
 				font-style: italic !important;
-				color: #2d6a4f !important; /* Officer positions turned to dark eco-green */
+				color: #2d6a4f !important;
 				letter-spacing: 0.05em !important;
 				opacity: 0.85;
 			}
@@ -140,7 +139,7 @@
 				</nav>
 			</header>
 
-			<!-- Dark-Themed Content Body Card -->
+			<!-- Core Content Body Area -->
 			<section id="main">
 				<header>
 					<h2>Meet the Officers</h2>
@@ -258,3 +257,4 @@
 
 	</body>
 </html>
+
