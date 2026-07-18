@@ -9,7 +9,7 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		
 		<!-- Tally Core Engine Loader Widget -->
-		<script async src="https://tally.so/widgets/embed.js"></script>
+		<script async src="https://tally.so"></script>
 
 		<style>
 			/* PREMIUM MATCHING WRAPPER SYSTEM */
@@ -34,33 +34,37 @@
 				width: 100%;
 			}
 
-			/* EXPANDED HOVER BUTTON LAYOUT (TEXT CHOP FIX) */
+			/* BULLETPROOF HOVER BUTTON OVERRIDES */
 			.portal-btn {
-				display: block;
-				width: 100%;
-				max-width: 32rem; /* Widen box container from 24rem to 32rem so text doesn't split */
-				background: transparent;
+				display: flex !important;
+				align-items: center !important;
+				justify-content: center !important;
+				width: 100% !important;
+				max-width: 32rem !important;
+				height: 3.8rem !important; /* Forces an expanded fixed height box */
+				line-height: 1 !important; /* Completely resets the squished line tracking */
+				background: transparent !important;
 				color: #ffffff !important;
 				border: 1px solid rgba(255, 255, 255, 0.25) !important;
-				padding: 1.2rem 2.5rem; /* Increased inner area size padding for premium look */
-				font-size: 0.95rem;
-				font-weight: 600;
-				letter-spacing: 0.15em;
-				text-transform: uppercase;
-				text-decoration: none;
-				border-radius: 4px;
-				cursor: pointer;
-				text-align: center;
-				white-space: nowrap; /* Forces text to strictly stay on 1 single clean line */
-				transition: all 0.25s ease-in-out;
+				padding: 0 1.5rem !important; /* Strategic padding boundaries */
+				font-size: 0.85rem !important; /* Sleek elegant text scaling */
+				font-weight: 600 !important;
+				letter-spacing: 0.15em !important;
+				text-transform: uppercase !important;
+				text-decoration: none !important;
+				border-radius: 4px !important;
+				cursor: pointer !important;
+				text-align: center !important;
+				white-space: nowrap !important; /* Guarantees text stays on one line */
+				transition: all 0.25s ease-in-out !important;
 			}
 			
 			.portal-btn:hover {
 				background: #ffffff !important;
 				color: #1c1d22 !important;
 				border-color: #ffffff !important;
-				box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
-				transform: translateY(-2px);
+				box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1) !important;
+				transform: translateY(-2px) !important;
 			}
 
 			.secure-badge {
