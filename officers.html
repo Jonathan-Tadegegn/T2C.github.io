@@ -9,9 +9,27 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		
 		<style>
-			/* CORE OVERRIDE FOR THE MAIN CANVAS BACKGROUND */
+			/* THE EXACT BACKGROUND COLOR MATRICING OVERRIDE ENGINE */
+			body::after {
+				content: "" !important;
+				position: fixed !important;
+				top: 0 !important;
+				left: 0 !important;
+				width: 100vw !important;
+				height: 100vh !important;
+				
+				/* Pure Eco-Forest Green Tint Gradient Layer Overlay */
+				background: radial-gradient(circle, rgba(27, 67, 50, 0.94) 0%, rgba(19, 42, 31, 0.98) 100%) !important;
+				
+				/* Blends your template's original background texture/script directly under the green tint */
+				mix-blend-mode: multiply !important; 
+				z-index: -1 !important;
+				pointer-events: none !important;
+			}
+			
+			/* Ensures the core document canvas relies on the absolute dark green blend matrix */
 			body {
-				background-color: #1c1d22 !important;
+				background-color: #132a1f !important;
 			}
 
 			/* THE MAIN CONTAINER PANEL (PRESERVED SLEEK DARK BACKDROP TINT) */
@@ -52,7 +70,7 @@
 				border-top: none;
 			}
 			
-			/* THE FIX: COLOURED GREEN TO MATCH YOUR CHOSEN IMAGE PALETTE */
+			/* COLOURED GREEN TO MATCH YOUR CHOSEN IMAGE PALETTE */
 			.department-title {
 				font-size: 1.1rem !important;
 				font-weight: 600 !important;
@@ -258,4 +276,3 @@
 
 	</body>
 </html>
-
