@@ -14,7 +14,7 @@
 				background-color: #1c1d22 !important;
 			}
 
-			/* THE MAIN CONTAINER PANEL (PRESERVED SLEEK DARK BACKDROP TINT) */
+			/* THE FIXED MAIN CONTAINER PANEL (PRESERVED DARK STYLE) */
 			#main {
 				max-width: 65rem !important; 
 				width: 90% !important;
@@ -26,25 +26,26 @@
 				border-radius: 8px !important;
 			}
 
-			/* KEEP ONLY THE MAIN HERO HEADINGS WHITE */
+			/* ALL GLOBAL TEXT FORCED TO UNIFORM DARK ECO-GREEN */
 			#main h2 {
 				margin-bottom: 0.5rem;
-				color: #ffffff !important; /* Main title strictly stays white */
+				color: #2d6a4f !important; /* Main Page Header Dark Green */
 			}
 			#main p.subtitle {
 				margin-bottom: 4rem;
-				color: rgba(255, 255, 255, 0.6) !important; /* Main subtitle strictly stays light grey */
+				color: #2d6a4f !important; /* Page Subtitle Dark Green */
 				letter-spacing: 0.1em;
 				text-transform: uppercase;
 				font-size: 0.8rem;
 				text-align: center;
+				opacity: 0.85;
 			}
 
 			/* PROFESSIONAL DEPARTMENTAL SECTIONS */
 			.department-section {
 				margin-top: 4rem;
 				padding-top: 2.5rem;
-				border-top: 1px solid rgba(255, 255, 255, 0.08);
+				border-top: 1px solid rgba(45, 106, 79, 0.2); /* Tinted divider line to match green theme */
 			}
 			.department-section:first-of-type {
 				margin-top: 1rem;
@@ -52,13 +53,12 @@
 				border-top: none;
 			}
 			
-			/* THE FIX: COLOURED GREEN TO MATCH YOUR CHOSEN IMAGE PALETTE */
 			.department-title {
 				font-size: 1.1rem !important;
 				font-weight: 600 !important;
 				letter-spacing: 0.2em !important;
 				text-transform: uppercase !important;
-				color: #2d6a4f !important; /* Department titles turned to dark eco-green */
+				color: #2d6a4f !important; /* Category Section Header Dark Green */
 				margin-bottom: 2.5rem !important;
 				text-align: center;
 			}
@@ -89,7 +89,7 @@
 				border-radius: 50%;
 				overflow: hidden;
 				margin-bottom: 1.5rem;
-				border: 2px solid rgba(45, 106, 79, 0.4);
+				border: 2px solid rgba(45, 106, 79, 0.4); /* Green tint border frame */
 				background: linear-gradient(135deg, #2d6a4f, #1b4332); 
 				box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 				transition: transform 0.3s ease, border-color 0.3s ease;
@@ -104,22 +104,21 @@
 				object-fit: cover;
 			}
 
-			/* COLOURED GREEN TO MATCH YOUR CHOSEN IMAGE PALETTE */
+			/* OFFICER NAMES AND ROLES FORCED TO SAME DARK GREEN */
 			.officer-name {
 				font-size: 1.05rem !important;
 				font-weight: 600 !important;
 				letter-spacing: 0.12em !important;
 				text-transform: uppercase !important;
-				color: #2d6a4f !important; /* Officer names turned to dark eco-green */
+				color: #2d6a4f !important; /* Member Names Dark Green */
 				margin-bottom: 0.4rem !important;
 			}
-			
 			.officer-role {
 				font-size: 0.85rem !important;
 				font-style: italic !important;
-				color: #2d6a4f !important; /* Officer positions turned to dark eco-green */
+				color: #2d6a4f !important; /* Member Positions Dark Green */
 				letter-spacing: 0.05em !important;
-				opacity: 0.85;
+				opacity: 0.8;
 			}
 		</style>
 	</head>
